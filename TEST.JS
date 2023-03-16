@@ -1,9 +1,7 @@
 let deviceSSIDPrefix = 'ShellyPlugUS';
 let ssidRE;
-//let internetSSID = "Romulus";
-//let internetPassword = "Alpaca.Lemonade!3.Wendigo!76";
-let internetSSID = "FAMHQ";
-let internetPassword = "r1h9n7m7";
+let internetSSID = "SSID_INTERNET";
+let internetPassword = "PASW_INTERNET";
 
 let device0,device1,device2,device3,device4,device5,device6,device7,device8,device9;
 
@@ -241,7 +239,7 @@ function connectToTargetDevice(ssidTarget){
     }
     Shelly.call(
     "Wifi.SetConfig",
-    { config: { sta1: { ssid: ssidTarget, pass: "", enable: true } } },
+    { config: { sta: { ssid: ssidTarget, pass: "", enable: true } } },
     function(result,ec,em) {
         console.log(JSON.stringify(result),ec,em);
         console.log("Connected to Target");
